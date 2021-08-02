@@ -1,0 +1,25 @@
+{
+  "name": "city-explorer-backend",
+  "version": "1.0.0",
+  "description": "backend 301d26 course class 07",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "zaid",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaidsh98/city-explorer-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zaidsh98/city-explorer-api/issues"
+  },
+  "homepage": "https://github.com/zaidsh98/city-explorer-api#readme"
+}
