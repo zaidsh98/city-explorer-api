@@ -5,6 +5,8 @@ require('dotenv').config();
 const cors = require('cors');
 const server = express() 
 const PORT = process.env.PORT;
+const WEATHERBIT_KEY = process.env.WEATHERBIT_KEY; 
+const WEATHERBIT_URL = process.env.WEATHERBIT_URL;
 server.use(cors());
 
 
@@ -32,6 +34,19 @@ server.get('/weather', (req, res) => {
     catch (e) {
         res.status(404).send('No Data for this City');
      }
+     const queryParams = {
+        params: {
+          key: WEATHERBIT_KEY,
+          lat: lat,
+          lon: lon
+        }
+      };
+      const response = await axios.get(WEATHERBIT_URL, queryParams);
+      const data = response.data.data.map(item => new Forecast(item));
+      res.json(data);
 });
+
+
+
 
 server.listen(PORT, () => console.log(`server on ${PORT}`));
